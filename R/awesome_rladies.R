@@ -16,6 +16,10 @@ awesome_rladies <- function(v) {
 }
 
 write_rladies <- function(x){
+  if (!(is.numeric(x) & x >= 1 & x %% 1 == 0)){
+    usethis::ui_stop("Please input an integer greater than or equal to 1")
+  }
+
   if (x == 1) {
     verb <- "is"
     noun <- "RLady"
